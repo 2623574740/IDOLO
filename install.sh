@@ -53,6 +53,7 @@ for package in "${docker_packages[@]}"; do
 done
 
 # 配置镜像源
+mkdir /etc/docker
 cat ./conf/daemon.json > /etc/docker/daemon.json
 sudo systemctl daemon-reload
 sudo systemctl stop docker.socket docker.service
